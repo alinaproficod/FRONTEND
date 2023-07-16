@@ -1,0 +1,39 @@
+function printNumber () {
+    for(let i = i;i<= 10; i+=2){
+        console.log(i);
+    }
+}
+
+function sumNambers() {
+
+    let result=0
+     for (let i = start; i <= end; i++){
+        sum+=i
+     }
+     return result;
+    
+
+}
+
+const players=[
+     { name: "Игрок 1", health: 100, damage: 10 },
+    { name: "Игрок 2", health: 80, damage: 8 },
+    { name: "Игрок 3", health: 120, damage: 12 }
+];
+console. log(players);
+
+function calculateAverage(numbers) {
+    if (numbers.length === 0) {
+      return 0;
+    }
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+  }
+  
+  const numbers = [1, 2, 3, 4, 5];
+  function celsiusToFahrenheit(celsius) {
+    return (celsius * 9) / 5 + 32;
+  }
+  
+  const celsiusTemperature = 30;
+  console.log(celsiusToFahrenheit(celsiusTemperature));  
