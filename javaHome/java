@@ -1,0 +1,67 @@
+function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+fizzBuzz();
+
+const book = {
+    title: "Название книги",
+    author: "Автор книги",
+    year: 2023
+  };
+  
+  console.log("Название: " + book.title);
+  console.log("Автор: " + book.author);
+  console.log("Год издания: " + book.year);
+  function sumNumbers() {
+    let sum = 0;
+    for (let i = 1; i <= 100; i++) {
+      sum += i;
+    }
+    console.log("Сумма чисел от 1 до 100: " + sum);
+  }
+
+  const person = {
+    name: "Имя человека",
+    age: 25,
+    gender: "Мужской"
+  };
+  
+  console.log("Имя: " + person.name);
+  console.log("Возраст: " + person.age);
+  console.log("Пол: " + person.gender);
+  function findAverage(numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum += numbers[i];
+    }
+    const average = sum / numbers.length;
+    return average;
+  }
+  
+  const numbers = [5, 10, 15, 20];
+  const averageValue = findAverage(numbers);
+  console.log("Среднее значение: " + averageValue);
+  const students = [
+    { name: "Студент 1", age: 20, grade: "A" },
+    { name: "Студент 2", age: 22, grade: "B" },
+    { name: "Студент 3", age: 21, grade: "C" }
+  ];
+  
+  students.forEach((student) => {
+    console.log("Имя: " + student.name);
+    console.log("Возраст: " + student.age);
+    console.log("Оценка: " + student.grade);
+  });
+
+  
