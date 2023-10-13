@@ -1,0 +1,7 @@
+zadacia 1. временная сложность этой задачи составляет O(n^2)
+
+zadacia 2. O(n * log2(n)).
+
+zadacia 3. O(n^2)
+
+zadacia 4. O(log2(n)).
