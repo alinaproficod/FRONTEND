@@ -1,22 +1,15 @@
-function hanoiRecursive(n, source, auxiliary, target) {
-  if (n === 1) {
-    moveDisk(source, target);
-    return;
-  }
-
-  hanoiRecursive(n - 1, source, target, auxiliary);
-  moveDisk(source, target);
-  hanoiRecursive(n - 1, auxiliary, source, target);
+function findKthElement(arr1, arr2, k) {
+  const mergedArray = [...arr1, ...arr2]; 
+  mergedArray.sort((a, b) => a - b); 
+  return mergedArray[k - 1]
 }
 
-function moveDisk(from, to) {
-  console.log(`Move disk from ${from} to ${to}`);
-}
+const array1 = [100, 112, 256, 349, 770];
+const array2 = [72, 86, 113, 119, 265, 445, 892];
+const k = 7;
 
-const n = 3; // Количество дисков
-const source = 'Left';
-const auxiliary = 'Middle';
-const target = 'Right';
+const result = findKthElement(array1, array2, k);
+console.log( k =  result);
 
 
 
