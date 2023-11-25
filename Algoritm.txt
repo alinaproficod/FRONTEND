@@ -1,29 +1,45 @@
-function quickSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
-  }
+function maximizeProfit(activities) {
+    
+    activities.sort((a, b) => a.start - b.start);
 
-  const pivot = arr[Math.floor(arr.length / 2)];
-  const left = [];
-  const right = [];
+    let totalProfit = 0;
+    let currentTime = 9; 
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      left.push(arr[i]);
-    } else if (arr[i] > pivot) {
-      right.push(arr[i]);
+    for (let i = 0; i < activities.length; i++) {
+        const activity = activities[i];
+
+       
+        if (activity.start >= currentTime) {
+            
+            const duration = activity.end - activity.start;
+
+            
+            if (activity.start < 13 && activity.end <= 13) {
+                totalProfit += duration; // Для активности до 13:00
+            } else if (activity.start < 13 && activity.end > 13) {
+                totalProfit += duration; 
+            } else if (activity.start >= 13) {
+                totalProfit += 2 * duration; 
+            }
+
+           
+            currentTime = activity.end;
+        }
     }
-   
-  }
 
-  return [...quickSort(left), pivot, ...quickSort(right)]
-const unsortedArray = [5, 2, 9, 1, 5, 6];
-const sortedArray = quickSort(unsortedArray);
-console.log(sortedArray);
+    return totalProfit;
+}
 
 
+const activities = [
+    { start: 10, end: 12 },
+    { start: 11, end: 14 },
+    { start: 12, end: 16 },
+    { start: 14, end: 15 },
+];
 
-
+const result = maximizeProfit(activities);
+console.log("", result);
 
 
 
