@@ -1,46 +1,20 @@
-function maximizeProfit(activities) {
-    
-    activities.sort((a, b) => a.start - b.start);
+function buildFrequencyDictionary(text) {
+  const frequencyDictionary = {};
 
-    let totalProfit = 0;
-    let currentTime = 9; 
+  // Убираем все символы, кроме букв
+  const cleanText = text.replace(/[^а-яё]/gi, '').toLowerCase();
 
-    for (let i = 0; i < activities.length; i++) {
-        const activity = activities[i];
-
-       
-        if (activity.start >= currentTime) {
-            
-            const duration = activity.end - activity.start;
-
-            
-            if (activity.start < 13 && activity.end <= 13) {
-                totalProfit += duration; // Для активности до 13:00
-            } else if (activity.start < 13 && activity.end > 13) {
-                totalProfit += duration; 
-            } else if (activity.start >= 13) {
-                totalProfit += 2 * duration; 
-            }
-
-           
-            currentTime = activity.end;
-        }
+  for (const char of cleanText) {
+    if (frequencyDictionary[char]) {
+      frequencyDictionary[char]++;
+    } else {
+      frequencyDictionary[char] = 1;
     }
+  }
 
-    return totalProfit;
+  return frequencyDictionary;
 }
 
 
-const activities = [
-    { start: 10, end: 12 },
-    { start: 11, end: 14 },
-    { start: 12, end: 16 },
-    { start: 14, end: 15 },
-];
 
-const result = maximizeProfit(activities);
-console.log("", result);
-
-
-
-
+console.log(russianFrequencyDictionary);
